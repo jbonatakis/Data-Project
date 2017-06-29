@@ -17,7 +17,7 @@ head(Loan_2014)
 summary(Loan_2014)
 
 # Check class of data frame objects
-lapply(Loan_2014, class)
+sapply(Loan_2014, class)
 
 # Coerce interest rate into more appropriate classes
 Loan_2014["int_rate"] <- as.numeric(Loan_2014$int_rate)
@@ -61,4 +61,10 @@ head(agg_zipdata)
 # Finds average income by ZIP
 agg_zipdata <- transform(agg_zipdata, avg_income = total_income / tax_returns)
 tail(agg_zipdata)
+
+# Gives the 6 points breakdown on avg_income
+summary(agg_zipdata$avg_income)
 hist(agg_zipdata$avg_income, breaks=30, labels=TRUE, xlab="Average Income", main="Average Income Histogram")
+
+# Sums the number of tax returns. 290,077,690 observations
+sum(agg_zipdata$tax_returns)
