@@ -1,7 +1,6 @@
 # Clear the work environment
 rm(list=ls())
 
-setwd("/home/jack/data")
 # Read in the csv file from active working directory
 Loan_Stats <- read.csv("~/data/LoanStats3c.csv", header=TRUE, skip = 1)
 
